@@ -1,3 +1,9 @@
+DROP DATABASE IF EXISTS sdc;
+
+CREATE DATABASE sdc;
+
+\c sdc;
+
 DROP TABLE IF EXISTS public.reviews;
 
 CREATE TABLE reviews (

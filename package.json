@@ -4,8 +4,8 @@
   "description": "This repo is designed to seed a remote database. Namely ones hosted on an AWS EC2 instance with node.js and either PostgreSQL OR MongoDB installed.",
   "main": "dbseeder.js",
   "scripts": {
-    "generate": "node /seeders/csvgen.js",
-    "pgc" : "psql -db SDC -U postgresql < seeders/schema.sql",
+    "generate": "node ./seeders/csvgen.js",
+    "pgc" : "sudo psql -U postgres < seeders/schema.sql",
     "mongo-seed": "mongo seeders/seedMongo.js"
   },
   "author": "ryanferrer",
