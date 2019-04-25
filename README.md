@@ -29,7 +29,7 @@ PostgreSQL OR MongoDB installed.
     1) First, generate a CSV
         - `npm run generate`
     2) Copy that .csv to your postgresql database
-        - `npm run pgc`
+        - `npm run pg-copy`
 
   - If you're using MongoDB
       - `npm run mongo-seed`
