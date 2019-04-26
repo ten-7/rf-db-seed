@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS public.reviews;
 
 CREATE TABLE reviews (
   productId INTEGER,
+  reviewId SMALLINT,
   username varchar(30),
   body varchar(200),
   score SMALLINT,
@@ -20,4 +21,4 @@ CREATE TABLE reviews (
   value BOOLEAN
 );
 
-\copy public.reviews(productId, username, body, score, likes, dislikes, reliability, durability, looks, performance, value) from 'output.csv' delimiter ',' csv header;
+\copy public.reviews(productId, reviewId, username, body, score, likes, dislikes, reliability, durability, looks, performance, value) from './seeders/output.csv' delimiter ',' csv header;

@@ -37,7 +37,7 @@ let bodies = [
 let myStore = [];
 
 // generate 100 items
-for (let i = 1; i < 101; i++){
+for (let i = 1; i < 1001; i++){
   let item = {};
   
   item.proscons = {};
@@ -53,7 +53,8 @@ for (let i = 1; i < 101; i++){
   item.score = Math.floor(11 * Math.random()); // can have a score from 0 to 10;
   item.likes = Math.floor(500 * Math.random()); // can have a likes number ranging from 0 to 10k
   item.dislikes = Math.floor(500 * Math.random());
-  item.productId = i;
+  item.productId = Math.ceil(100 * Math.random());
+  item.reviewId = Math.ceil(100 * Math.random());
 
   myStore.push(item);
 }
@@ -73,7 +74,7 @@ for (let i = 1; i < 101; i++){
 // Write products in memory to file
 
 // header of csv
-let header = `productId, username, body, score, likes, dislikes, reliability, durability, looks, performance, value \n`;
+let header = `productId, reviewId, username, body, score, likes, dislikes, reliability, durability, looks, performance, value \n`;
 
 // append a new line of values in each column of the header
 
@@ -87,7 +88,7 @@ function writeToCSV(array, times){
   let list = '';
 
   array.forEach(entry => {
-    list += `${entry.productId}, ${entry.username}, "${entry.body}", ${entry.score}, ${entry.likes}, ${entry.dislikes}, ${Number(entry.proscons.reliablility)}, ${Number(entry.proscons.durability)}, ${Number(entry.proscons.looks)}, ${Number(entry.proscons.performance)}, ${Number(entry.proscons.value)}\n`;
+    list += `${entry.productId}, ${entry.reviewId}, ${entry.username}, "${entry.body}", ${entry.score}, ${entry.likes}, ${entry.dislikes}, ${Number(entry.proscons.reliablility)}, ${Number(entry.proscons.durability)}, ${Number(entry.proscons.looks)}, ${Number(entry.proscons.performance)}, ${Number(entry.proscons.value)}\n`;
   });
 
   console.log(list)
@@ -101,4 +102,4 @@ function writeToCSV(array, times){
   }
 }
 
-writeToCSV(myStore, 100000);
+writeToCSV(myStore, 10000);
