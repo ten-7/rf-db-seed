@@ -21,4 +21,4 @@ CREATE TABLE reviews (
   value BOOLEAN
 );
 
-\copy public.reviews(productId, reviewId, username, body, score, likes, dislikes, reliability, durability, looks, performance, value) from './seeders/output.csv' delimiter ',' csv header;
+\copy public.reviews(productId, reviewId, username, body, score, likes, dislikes, reliability, durability, looks, performance, value) from 'output.csv' delimiter ',' csv header;
