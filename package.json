@@ -5,7 +5,7 @@
   "main": "dbseeder.js",
   "scripts": {
     "generate": "node ./seeders/csvgen.js",
-    "pg-copy" : "sudo -u postgres psql < seeders/schema.sql",
+    "pg-copy" : "sudo -u postgres psql < ./seeders/schema.sql",
     "clear": "sudo rm -F seeders/output.csv",
     "mongo-seed": "mongo seeders/seedMongo.js"
   },
